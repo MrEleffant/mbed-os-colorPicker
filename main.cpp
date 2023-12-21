@@ -25,7 +25,7 @@ int main() {
     float coeff = joystick.Xtriggered();
     if(coeff != 0.0) {
       guessColor.moveColor(coeff);
-    }a
+    }
 
 
 
