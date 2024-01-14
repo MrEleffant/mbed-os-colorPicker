@@ -14,7 +14,6 @@ public:
   JoystickDirection Ytriggered();
   float Xtriggered();
 
-
 private:
   AnalogIn xInput;
   AnalogIn yInput;

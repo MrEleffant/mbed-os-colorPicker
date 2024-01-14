@@ -1,5 +1,5 @@
-#include <iostream>
 #include "joystick.hpp"
+#include <iostream>
 
 Joystick::Joystick(PinName xPin, PinName yPin)
     : xInput(xPin), yInput(yPin), minX(0.0), maxX(1.0), minY(0.0), maxY(1.0) {}
@@ -12,7 +12,6 @@ void Joystick::calibrate() {
   maxX = 1;
   minY = 0.35;
   maxY = 1;
-
 
   for (int i = 0; i < 500; ++i) {
     float xValue = xInput.read();

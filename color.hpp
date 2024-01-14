@@ -49,15 +49,15 @@ public:
   }
 
 private:
-int constrainValue(int value, int min, int max) {
+  int constrainValue(int value, int min, int max) {
     if (value < min) {
-        return min;
+      return min;
     } else if (value > max) {
-        return max;
+      return max;
     } else {
-        return value;
+      return value;
     }
-}
+  }
 
 public:
   const char *nextColor() {
@@ -78,10 +78,10 @@ public:
     if (coeff > 0.5) {
       calculated_coeff = 5 + (coeff);
     } else {
-      calculated_coeff = 5 + ((1-coeff));
+      calculated_coeff = 5 + ((1 - coeff));
     }
 
-    std::cout << "calculated_coeff : " << calculated_coeff << std::endl;
+    // std::cout << "calculated_coeff : " << calculated_coeff << std::endl;
 
     if (coeff < 0.5) {
       calculated_coeff = -calculated_coeff;
@@ -89,17 +89,20 @@ public:
 
     switch (this->selectedColor) {
     case colors::red: {
-      this->red = constrainValue(static_cast<int>(this->red + calculated_coeff), 0, 255);
+      this->red = constrainValue(static_cast<int>(this->red + calculated_coeff),
+                                 0, 255);
       changed = this->red;
       break;
     }
     case colors::green: {
-      this->green = constrainValue(static_cast<int>(this->green + calculated_coeff), 0, 255);
+      this->green = constrainValue(
+          static_cast<int>(this->green + calculated_coeff), 0, 255);
       changed = this->green;
       break;
     }
     case colors::blue: {
-      this->blue = constrainValue(static_cast<int>(this->blue + calculated_coeff), 0, 255);
+      this->blue = constrainValue(
+          static_cast<int>(this->blue + calculated_coeff), 0, 255);
       changed = this->blue;
       break;
     }
